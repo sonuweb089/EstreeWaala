@@ -39,41 +39,7 @@ export default function App() {
             </>
           }
         />
-        <Route
-          path="/ourservice"
-          element={
-            <>
-              <About2 setShowForm={setShowForm} /> <Eco />
-            </>
-          }
-        />
-        <Route
-          path="/About"
-          element={
-            <>
-              <About setShowForm={setShowForm} />
-            </>
-          }
-        />
-        <Route
-          path="/ecofriendly"
-          element={
-            <>
-              <Eco />
-            </>
-          }
-        />
-        <Route
-          path="/cta"
-          element={
-            <>
-              <CTA />
-            </>
-          }
-        />
 
-        <Route path="/testimonial" element={<Test />} />
-        <Route path="/faq" element={<FAQ />} />
         <Route
           path="/contact"
           element={
