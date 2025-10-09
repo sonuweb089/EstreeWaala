@@ -8,7 +8,7 @@ import { FaRegClock, FaMoneyBillWave, FaLeaf } from "react-icons/fa";
 // For example, if the images are only displayed at 300px wide, they shouldn't be 2000px wide.
 import myimg from "../assets/pic.webp";
 import myimg1 from "../assets/pic2.webp";
-import hero from "../assets/hero1.webp";
+import hero from "../assets/hero3.jpeg";
 
 // Removed: featureSectionVariants definition
 
@@ -52,13 +52,9 @@ const Service = () => {
       </div>
 
       {/* Feature Section - Now Static */}
-      <div className="py-16 px-4 md:px-8 lg:px-16">
-        {/* Replaced motion.div with a standard div */}
-        <div
-          // Removed framer-motion props (variants, initial, whileInView, viewport, transition)
-          className="max-w-7xl mx-auto"
-        >
-          <div className="bg-[#2E2A53] text-white rounded-lg p-8 md:p-12 shadow-xl">
+      <div className="py-16 px-0">
+        <div className="w-full">
+          <div className="bg-[#2E2A53] text-white rounded-none p-8 md:p-12 shadow-xl w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
               {/* Feature 1 */}
               <div

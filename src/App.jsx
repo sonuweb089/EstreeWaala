@@ -6,7 +6,7 @@ import Services from "./Component/Service";
 import About from "./Component/About";
 import Eco from "./Component/Eco";
 import FAQ from "./Component/Faq";
-import CTA from "./Component/Cta";
+// import CTA from "./Component/Cta";
 import QuickService from "./Component/QuickService";
 import { Routes, Route } from "react-router-dom";
 import About2 from "./Component/About2service";
@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <div>
-      <Navbar showForm={showForm} setShowForm={setShowForm} />
+      <Navbar showForm={showForm} hsetSowForm={setShowForm} />
 
       <Routes>
         <Route
@@ -32,7 +32,7 @@ export default function App() {
               <Services />
               <About setShowForm={setShowForm} />
               <About2 setShowForm={setShowForm} /> <Eco />
-              <CTA />
+              {/*  <CTA /> */}
               <Test />
               <FAQ />
               <QuickService setShowForm={setShowForm} />
@@ -63,7 +63,7 @@ export default function App() {
             </>
           }
         />
-        <Route
+        {/*         <Route
           path="/cta"
           element={
             <>
@@ -71,7 +71,7 @@ export default function App() {
             </>
           }
         />
-
+ */}
         <Route path="/testimonial" element={<Test />} />
         <Route path="/faq" element={<FAQ />} />
         <Route

@@ -45,7 +45,6 @@ const Navbar = ({ showForm, setShowForm }) => {
     { name: "Eco-Friendly", path: "/ecofriendly" },
     { name: "Testimonials", path: "/testimonial" },
     { name: "FAQ", path: "/faq" },
-    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
@@ -57,15 +56,12 @@ const Navbar = ({ showForm, setShowForm }) => {
         animate="animate"
       >
         <div className="container flex items-center justify-between py-4 px-4 md:px-10">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center transform md:translate-x-6">
             <img
               src={Estreewala}
               alt="Estreewala Logo"
-              className="w-10 h-10 rounded-md"
+              className="w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow-md transition-transform duration-300 hover:scale-110"
             />
-            <span className="font-extrabold text-[#2E2A53] text-lg">
-              Estree-Waala
-            </span>
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-[#2E2A53] font-medium">
@@ -93,11 +89,8 @@ const Navbar = ({ showForm, setShowForm }) => {
           </nav>
 
           <div className="hidden md:block">
-            <button
-              onClick={() => setShowForm(true)}
-              className="bg-[#2E2A53] text-[#F5F0E8] px-5 py-2 rounded-full hover:bg-[#1A1A1A] transition"
-            >
-              Book Pickup
+            <button className="bg-[#2E2A53] text-[#F5F0E8] px-5 py-2 rounded-full hover:bg-[#1A1A1A] transition">
+              <Link to="/contact"> Contact-us</Link>
             </button>
           </div>
 

@@ -50,7 +50,7 @@ const AboutUsSection = ({ setShowForm }) => {
             onClick={() => setShowForm(true)}
             className="bg-[#2E2A53] text-white text-lg font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-[#1A1A1A] transition-colors duration-300"
           >
-            Order now
+            Inquiry Now
           </button>
         </div>
       </div>

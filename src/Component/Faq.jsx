@@ -4,7 +4,7 @@ import Faq from "../assets/faq.webp";
 import Faq1 from "../assets/faq1.webp";
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
     {

@@ -3,11 +3,13 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <div class="min-h-screen bg-gradient-to-br from-[#FDFCFB] to-[#E2D1C3]">
+      <div class="min-h-screen bg-white ">
         <App />
       </div>
     </BrowserRouter>
