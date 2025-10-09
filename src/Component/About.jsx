@@ -1,7 +1,7 @@
 import React from "react";
 
 import Ab from "../assets/about.webp";
-import Ab1 from "../assets/about1.webp";
+import Ab1 from "../assets/about1j.webp";
 
 const AboutUsSection = ({ setShowForm }) => {
   return (
