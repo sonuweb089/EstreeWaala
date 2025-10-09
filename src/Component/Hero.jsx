@@ -1,13 +1,29 @@
 import React from "react";
-// Removed: import { motion } from "framer-motion";
+
+import { motion } from "framer-motion";
+
+const heroVariants = {
+  initial: { y: 20, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+      delay: 0.3,
+    },
+  },
+};
 
 const Hero = ({ setShowForm }) => {
   return (
     <section className="text-center py-20 relative overflow-hidden">
-      {/* Replaced motion.div with a standard div */}
-      <div
-        // Removed all framer-motion props (initial, animate, transition)
+      <motion.div
         className="w-full"
+        variants={heroVariants}
+        initial="initial"
+        animate="animate"
       >
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-snug text-[#2E2A53] tracking-tight">
@@ -19,17 +35,28 @@ const Hero = ({ setShowForm }) => {
             required.
           </p>
 
-          <div className="mt-10">
-            <button
+          <motion.div
+            className="mt-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+              delay: 0.5,
+            }}
+          >
+            <motion.button
               onClick={() => setShowForm(true)}
-              // The hover effects use standard CSS transitions, maintaining smooth interaction.
-              className="bg-[#2E2A53] text-[#F5F0E8] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-[#2E2A78] transition-all duration-300 transform hover:scale-105"
+              className="bg-[#2E2A53] text-[#F5F0E8] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-[#2E2A78] transition-all duration-300 transform"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Order now
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
