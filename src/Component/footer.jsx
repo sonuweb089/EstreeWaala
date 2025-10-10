@@ -17,16 +17,16 @@ const Footer = () => {
     <footer className="bg-black text-white pt-12 pb-6 font-sans border border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo Section */}
-        <div className="flex justify-start items-center mb-8">
-          <img
-            src={Estreewala}
-            alt="Estreewala Logo"
-            className="w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow-md transition-transform duration-300 hover:scale-110"
-          />
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div>
+            <div className="flex ml-15 items-center mb-8">
+              <img
+                src={Estreewala}
+                alt="Estreewala Logo"
+                className="w-14 h-14 md:w-17 md:h-17 text-center object-contain drop-shadow-md transition-transform duration-300 hover:scale-110"
+              />
+            </div>
             <div className="flex space-x-4 text-xl mb-4">
               <a
                 href="#"
@@ -140,7 +140,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-white transition duration-200"
                 >
-                  Careers
+                  Contact Us
                 </a>
               </li>
               <li>
@@ -148,7 +148,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-white transition duration-200"
                 >
-                  Blog
+                  Gmail
                 </a>
               </li>
               <li>
@@ -156,15 +156,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-white transition duration-200"
                 >
-                  Media Kit
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition duration-200"
-                >
-                  Partner With Us
+                  Address
                 </a>
               </li>
             </ul>
@@ -194,10 +186,10 @@ const Footer = () => {
             </p>
 
             <p className="mt-4 text-gray-400 text-sm">
-              <span className="font-semibold text-white flex items-center">
-                <FaMapMarkerAlt className="mr-2" /> Location:
+              <span className="">
+                <FaMapMarkerAlt className="mr-2 font-semibold text-white flex items-center" />
+                Estreewala HQ, A-4, Sector - 3, Noida, UP 201301
               </span>
-              Estreewala HQ, A-4, Sector - 3, Noida, UP 201301
             </p>
           </div>
         </div>

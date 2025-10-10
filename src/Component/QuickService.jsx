@@ -20,7 +20,7 @@ const QuickServiceHero = ({ setShowForm }) => {
                      transition-colors duration-300 ease-in-out
                      hover:bg-[#2E2A78] hover:shadow-xl"
         >
-          Order now
+          Contact Us
         </button>
       </div>
     </div>
