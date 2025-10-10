@@ -209,9 +209,10 @@ const Footer = () => {
               </a>
             </p>
 
-            <p className="mt-4 text-gray-400 text-sm">
-              <span className="">
-                <FaMapMarkerAlt className="mr-2 font-semibold text-white flex items-center" />
+            <p className="mt-4 text-gray-400 text-sm flex">
+              <FaMapMarkerAlt className="mr-2 font-semibold text-white flex-shrink-0" />
+
+              <span className="flex-grow min-w-0">
                 Estreewala HQ, A-4, Sector - 3, Noida, UP 201301
               </span>
             </p>
