@@ -159,6 +159,30 @@ const Footer = () => {
                   Address
                 </a>
               </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition duration-200"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition duration-200"
+                >
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition duration-200"
+                >
+                  Refund Policy
+                </a>
+              </li>
             </ul>
           </div>
 
