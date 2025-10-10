@@ -146,102 +146,13 @@ const Navbar = ({ showForm, setShowForm }) => {
                   }}
                   className="w-full mt-2 bg-[#2E2A53] text-white py-2 rounded hover:bg-[#1A1A1A] transition"
                 >
-                  Book Pickup
+                  <Link to="/contact"> Contact-us</Link>
                 </button>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </motion.header>
-
-      <AnimatePresence>
-        {showForm && (
-          <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setShowForm(false)}
-          >
-            <motion.div
-              className="bg-white rounded-2xl shadow-2xl p-8 w-[90%] max-w-md relative"
-              variants={modalVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setShowForm(false)}
-                className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
-                aria-label="Close form"
-              >
-                ✖
-              </button>
-
-              <h2 className="flex items-center justify-center gap-2 text-2xl font-bold text-[#2E2A53] mb-4">
-                <MdShoppingBasket size={28} color="#C9B9A5" />
-                <span>Book Laundry Pickup</span>
-              </h2>
-
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Your pickup request has been sent");
-                  setShowForm(false);
-                }}
-                className="space-y-4"
-              >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  className="w-full border rounded-md px-4 py-2"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  required
-                  className="w-full border rounded-md px-4 py-2"
-                />
-                <textarea
-                  name="address"
-                  placeholder="Pickup Address"
-                  required
-                  rows="3"
-                  className="w-full border rounded-md px-4 py-2"
-                />
-                <select
-                  name="service"
-                  required
-                  className="w-full border rounded-md px-4 py-2"
-                >
-                  <option value="">Select Service</option>
-                  <option value="Wash & Fold">Wash & Fold</option>
-                  <option value="Dry Cleaning">Dry Cleaning</option>
-                  <option value="Ironing">Ironing</option>
-                  <option value="Clothing Repair">Clothing Repair</option>
-                </select>
-                <input
-                  type="date"
-                  name="date"
-                  required
-                  className="w-full border rounded-md px-4 py-2"
-                />
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#2E2A53] text-white font-semibold py-2 rounded-md hover:bg-[#1A1A1A] transition"
-                >
-                  Send Request
-                </button>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 };

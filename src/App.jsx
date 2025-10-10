@@ -21,14 +21,14 @@ export default function App() {
 
   return (
     <div>
-      <Navbar showForm={showForm} hsetSowForm={setShowForm} />
+      <Navbar showForm={showForm} setShowForm={setShowForm} />
 
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Hero setShowForm={setShowForm} />
+              <Hero showForm={showForm} setShowForm={setShowForm} />
               <Services />
               <About setShowForm={setShowForm} />
               <About2 setShowForm={setShowForm} /> <Eco />

@@ -7,9 +7,8 @@ import {
   FaLinkedinIn,
   FaTwitter,
   FaYoutube,
-  // --- New Import for Location Icon ---
   FaMapMarkerAlt,
-  FaEnvelope, // New Import for Email Icon
+  FaEnvelope,
   FaPhoneAlt,
 } from "react-icons/fa";
 
@@ -26,12 +25,9 @@ const Footer = () => {
           />
         </div>
 
-        {/* Main Links Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          {/* Column 1: Social Media & Description */}
           <div>
             <div className="flex space-x-4 text-xl mb-4">
-              {/* ... (Social media links remain the same) ... */}
               <a
                 href="#"
                 aria-label="Facebook"
@@ -74,10 +70,25 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2: Information */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Information</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition duration-200"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition duration-200"
+                >
+                  About
+                </a>
+              </li>
               <li>
                 <a
                   href="#"
@@ -91,7 +102,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-white transition duration-200"
                 >
-                  Pricing
+                  Eco-Friendly
                 </a>
               </li>
               <li>
@@ -99,7 +110,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-white transition duration-200"
                 >
-                  Pick-up & Delivery
+                  Testimonials
                 </a>
               </li>
               <li>
@@ -107,21 +118,12 @@ const Footer = () => {
                   href="#"
                   className="hover:text-white transition duration-200"
                 >
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition duration-200"
-                >
-                  Offers
+                  FAQ
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Other Links */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Other Links</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
@@ -168,22 +170,19 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact (MODIFIED) */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Contact</h3>
 
-            {/* Phone Number 1 (Removed Duplicate) */}
             <p className="text-gray-400 text-sm flex items-center">
               <FaPhoneAlt className="mr-2 text-white" />
               <a
                 href="tel:+916789087656"
                 className="hover:text-white transition duration-200"
               >
-                +91-67890 87656
+                +91-91188 11192
               </a>
             </p>
 
-            {/* Added Email */}
             <p className="text-gray-400 text-sm flex items-center mt-2">
               <FaEnvelope className="mr-2 text-base text-white" />
               <a
@@ -194,7 +193,6 @@ const Footer = () => {
               </a>
             </p>
 
-            {/* Location (Previously Address) */}
             <p className="mt-4 text-gray-400 text-sm">
               <span className="font-semibold text-white flex items-center">
                 <FaMapMarkerAlt className="mr-2" /> Location:
@@ -206,7 +204,6 @@ const Footer = () => {
 
         <hr className="border-gray-700 mb-6" />
 
-        {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <div className="flex space-x-4 mb-3 md:mb-0">
             <p>
