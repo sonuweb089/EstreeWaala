@@ -3,7 +3,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import Estreewala from "../assets/Estreewala.webp";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import { motion } from "framer-motion"; // <-- added
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -38,12 +38,17 @@ const Navbar = () => {
 
   return (
     <motion.header
-      initial={{ y: -100, opacity: 0 }} // Start above viewport
-      animate={{ y: show ? 0 : -100, opacity: 1 }} // Animate down
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: show ? 0 : -100, opacity: 1 }}
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      className="sticky top-0 z-50 bg-transparent transition-transform duration-300"
+      className="sticky top-0 z-50 bg-white shadow-md"
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-10 text-[#2E2A53]">
+        {/* Mobile: Logo left */}
+        <RouterLink to="/" className="flex-shrink-0 md:hidden">
+          <img src={Estreewala} alt="Logo" className="w-14 h-14" />
+        </RouterLink>
+
         {/* Desktop Navbar */}
         <div className="hidden md:flex items-center justify-center w-full font-medium">
           {/* Left Links */}
@@ -81,13 +86,9 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Center Logo */}
-          <RouterLink to="/" className="mx-6 flex-shrink-0">
-            <img
-              src={Estreewala}
-              alt="Logo"
-              className="w-14 h-14 md:w-16 md:h-16"
-            />
+          {/* Center Logo (Desktop) */}
+          <RouterLink to="/" className="mx-6 flex-shrink-0 hidden md:flex">
+            <img src={Estreewala} alt="Logo" className="w-16 h-16" />
           </RouterLink>
 
           {/* Right Links */}
@@ -122,43 +123,51 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl p-2 text-white"
+          className="md:hidden text-2xl p-2 text-[#2E2A53]"
         >
           {open ? <HiX /> : <HiMenu />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden absolute w-full z-50 bg-transparent">
-          <div className="px-6 py-4 flex flex-col space-y-4 text-[#2E2A53]">
-            {[...leftLinks, ...rightLinks].map((link) =>
-              link.name === "Contact Us" ? (
-                <RouterLink
-                  key={link.id}
-                  to="/contact"
-                  onClick={() => setOpen(false)}
-                  className="py-2 border-b border-white/20 text-lg hover:text-[#6E5A4C] transition-colors duration-300"
-                >
-                  {link.name}
-                </RouterLink>
-              ) : (
-                <ScrollLink
-                  key={link.id}
-                  to={link.id}
-                  smooth={true}
-                  duration={500}
-                  offset={-80}
-                  onClick={() => setOpen(false)}
-                  className="cursor-pointer py-2 border-b border-white/20 text-lg hover:text-[#6E5A4C] transition-colors duration-300"
-                >
-                  {link.name}
-                </ScrollLink>
-              )
-            )}
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ y: -200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -200, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 120, damping: 20 }}
+            className="md:hidden absolute w-full z-50 bg-white shadow-lg"
+          >
+            <div className="px-6 py-4 flex flex-col space-y-4 text-[#2E2A53]">
+              {[...leftLinks, ...rightLinks].map((link) =>
+                link.name === "Contact Us" ? (
+                  <RouterLink
+                    key={link.id}
+                    to="/contact"
+                    onClick={() => setOpen(false)}
+                    className="py-2 border-b border-gray-200 text-lg hover:text-[#6E5A4C] transition-colors duration-300"
+                  >
+                    {link.name}
+                  </RouterLink>
+                ) : (
+                  <ScrollLink
+                    key={link.id}
+                    to={link.id}
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    onClick={() => setOpen(false)}
+                    className="cursor-pointer py-2 border-b border-gray-200 text-lg hover:text-[#6E5A4C] transition-colors duration-300"
+                  >
+                    {link.name}
+                  </ScrollLink>
+                )
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };

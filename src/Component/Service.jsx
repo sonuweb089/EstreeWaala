@@ -6,7 +6,7 @@ import hero from "../assets/hero3.jpeg";
 
 const Service = () => {
   return (
-    <div className="text-center pt-12 mt-10 relative overflow-hidden">
+    <div className="text-center pt-12  relative overflow-hidden">
       {/* Image Gallery */}
       <div className="grid grid-cols-3 gap-2 px-2 max-w-6xl mx-auto">
         <div className="p-1 mt-[-2rem]">
@@ -36,7 +36,7 @@ const Service = () => {
             <img
               src={myimg}
               alt="Hands holding neatly folded clothes with a flower"
-              className="w-full h-full object-cover rounded-lg aspect-[3/4]"
+              className="w-full h-full object-cover rounded-lg aspect-[3/4] relative"
               loading="lazy"
             />
           </div>

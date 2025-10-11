@@ -4,7 +4,7 @@ import LaundryHero from "../assets/Pricehero.webp"; // your image
 
 const Hero = () => {
   return (
-    <section className=" h-screen overflow-hidden bg-white">
+    <section className=" h-auto overflow-hidden bg-white">
       {/* Background image */}
       {/*    <img
         src={LaundryHero}
