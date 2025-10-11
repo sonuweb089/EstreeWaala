@@ -1,93 +1,79 @@
+// App.js
+
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Components
 import Navbar from "./Component/Navbar";
-import Footer from "./Component/footer";
 import Hero from "./Component/Hero";
 import Services from "./Component/Service";
 import About from "./Component/About";
 import Eco from "./Component/Eco";
 import FAQ from "./Component/Faq";
-// import CTA from "./Component/Cta";
-import QuickService from "./Component/QuickService";
-import { Routes, Route } from "react-router-dom";
-import About2 from "./Component/About2service";
 import Test from "./Component/Test";
+import Cta from "./Component/Cta1";
+import HomeContact from "./Component/Contactform";
+import QuickService from "./Component/QuickService";
+import Footer from "./Component/footer";
 
-import Contact from "./Component/Contact/contactmap";
-import Contactform from "./Component/Contact/form";
-import Contactme from "./Component/Contact/myContact";
-
-export default function App() {
+function Home() {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <div>
-      <Navbar showForm={showForm} setShowForm={setShowForm} />
+    <>
+      <section id="home">
+        <Hero showForm={showForm} setShowForm={setShowForm} />
+      </section>
+      <section id="services">
+        <Services />
+      </section>
+      <section id="about">
+        <About setShowForm={setShowForm} />
+      </section>
+      <section id="eco">
+        <Eco />
+      </section>
+      <section id="testimonials">
+        <Test />
+      </section>
+      <section id="faq">
+        <FAQ />
+      </section>
+      <section id="cta">
+        <Cta />
+      </section>
+      <section id="contact">
+        <HomeContact />
+      </section>
+      <section id="quickservice">
+        <QuickService setShowForm={setShowForm} />
+      </section>
+
+      <Footer />
+    </>
+  );
+}
+
+import Contact from "./Component/Contact/contactmap";
+import Contactme from "./Component/Contact/myContact";
+
+export default function App() {
+  return (
+    <Router>
+      <Navbar />
 
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero showForm={showForm} setShowForm={setShowForm} />
-              <Services />
-              <About setShowForm={setShowForm} />
-              <About2 setShowForm={setShowForm} /> <Eco />
-              {/*  <CTA /> */}
-              <Test />
-              <FAQ />
-              <QuickService setShowForm={setShowForm} />
-            </>
-          }
-        />
-        <Route
-          path="/ourservice"
-          element={
-            <>
-              <About2 setShowForm={setShowForm} /> <Eco />
-            </>
-          }
-        />
-        <Route
-          path="/About"
-          element={
-            <>
-              <About setShowForm={setShowForm} />
-            </>
-          }
-        />
-        <Route
-          path="/ecofriendly"
-          element={
-            <>
-              <Eco />
-            </>
-          }
-        />
-        {/*         <Route
-          path="/cta"
-          element={
-            <>
-              <CTA />
-            </>
-          }
-        />
- */}
-        <Route path="/testimonial" element={<Test />} />
-        <Route path="/faq" element={<FAQ />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="/contact"
           element={
             <>
-              <Contact />
-
-              <Contactform />
-              <Contactme />
+              {" "}
+              <Contact /> <HomeContact /> <Contactme />{" "}
             </>
           }
-        />
+        ></Route>
       </Routes>
-
-      <Footer />
-    </div>
+    </Router>
   );
 }

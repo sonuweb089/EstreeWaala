@@ -34,7 +34,7 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="py-16 md:py-24 px-4 md:px-8 relative overflow-hidden">
+    <div className="py-16  md:py-24 px-4 md:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         <div className="text-left">
           <p className="inline-block px-4 py-2 bg-[#F5F0E8] text-[#2E2A53] font-semibold tracking-wider uppercase mt-8 mb-3 rounded-full shadow-md">

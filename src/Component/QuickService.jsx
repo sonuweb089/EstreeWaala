@@ -3,7 +3,7 @@ import React from "react";
 const QuickServiceHero = ({ setShowForm }) => {
   return (
     <div className="max-h-[7xl] flex items-start justify-center text-center px-4 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto z-11 pt-16 md:pt-24 mb-10">
+      <div className="max-w-4xl mx-auto z-11 pt-16 md:pt-24 mb-30">
         <h1 className="text-6xl md:text-7xl font-extrabold text-[#2E2A53] leading-tight">
           Quick. Fast. <br />
           Reliable.

@@ -90,7 +90,7 @@ const LaundryWalaTestimonials = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: windowWidth < 1024 ? 1 : 3, // 👈 force based on current width
+    slidesToShow: windowWidth < 1024 ? 1 : 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -98,7 +98,7 @@ const LaundryWalaTestimonials = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 px-4  sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
         <p className="inline-block px-4 py-2 mb-3 bg-[#F5F0E8] text-[#6E5A4C] font-semibold tracking-wider uppercase mt-8 rounded-full shadow-md">
           TESTIMONIALS

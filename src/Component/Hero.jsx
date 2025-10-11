@@ -69,7 +69,6 @@ const Hero = ({ showForm, setShowForm }) => {
         </div>
       </motion.div>
 
-      {/* ---- Form Modal ---- */}
       <AnimatePresence>
         {showForm && (
           <motion.div
