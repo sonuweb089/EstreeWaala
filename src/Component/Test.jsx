@@ -15,74 +15,74 @@ const LaundryWalaTestimonials = () => {
 
   const reviews = [
     {
-      name: "Sarah M.",
-      time: "1 month ago",
-      text: "Fast, reliable, and professional! My clothes were fixed the same day, and now they're perfectly clean. Highly recommend their service!",
+      name: "Ananya S.",
+      time: "2 weeks ago",
+      text: "Finally found a laundry service in Gurgaon that’s fast, affordable, and reliable. My clothes come back smelling fresh and perfectly folded. I highly recommend Estreewala!",
       rating: 5,
       avatar: "https://i.pravatar.cc/150?img=1",
     },
     {
-      name: "Michael T.",
-      time: "14 days ago",
-      text: "I was in a rush, and they arrived quickly to pick up my laundry. Their expertise saved me from a major headache. Will definitely use them again.",
+      name: "Rohit K.",
+      time: "1 month ago",
+      text: "I booked a same-day laundry pickup and couldn’t believe how quick it was. Shirts were neatly pressed and stain-free. Definitely the best dry cleaning near me!",
       rating: 5,
-      avatar: "https://i.pravatar.cc/150?img=7",
+      avatar: "https://i.pravatar.cc/150?img=2",
     },
     {
-      name: "David R.",
-      time: "24 days ago",
-      text: "My garments were handled with care and returned perfectly folded. Fast, reliable, and professional service every time. They're my new go-to!",
+      name: "Nisha T.",
+      time: "3 weeks ago",
+      text: "Estreewala made my life easier. Their doorstep laundry service saves so much time, and the clothes always come back soft and crease-free.",
       rating: 5,
-      avatar: "https://i.pravatar.cc/150?img=12",
+      avatar: "https://i.pravatar.cc/150?img=3",
     },
     {
-      name: "Jessica L.",
+      name: "Aditya P.",
       time: "2 months ago",
-      text: "Exceptional stain removal! I thought my favorite shirt was ruined, but LaundryWala brought it back to life. Truly impressed with the results.",
+      text: "I used to worry about my expensive suits, but Estreewala’s professional dry cleaning made them look brand new. They’re experts in handling delicate fabrics.",
       rating: 5,
       avatar: "https://i.pravatar.cc/150?img=4",
     },
     {
-      name: "Robert H.",
+      name: "Sneha R.",
       time: "1 week ago",
-      text: "Great value for money and incredibly convenient. The pick-up and drop-off service is a game-changer for my busy schedule. Five stars!",
+      text: "I switched from another laundry app and never looked back. Transparent pricing, eco-friendly detergents, and super-fast delivery that actually happens!",
       rating: 5,
-      avatar: "https://i.pravatar.cc/150?img=15",
+      avatar: "https://i.pravatar.cc/150?img=5",
     },
     {
-      name: "Emily C.",
-      time: "3 days ago",
-      text: "The delivery person was so polite, and my laundry smelled amazing. It feels like a high-end service at an affordable price. Fantastic!",
-      rating: 5,
-      avatar: "https://i.pravatar.cc/150?img=10",
-    },
-    {
-      name: "Kevin B.",
-      time: "1 month ago",
-      text: "Always on time, and they pay attention to my specific instructions. It's the little details that make this laundry service stand out.",
-      rating: 5,
-      avatar: "https://i.pravatar.cc/150?img=9",
-    },
-    {
-      name: "Maria G.",
-      time: "5 months ago",
-      text: "Used them for dry cleaning and regular wash. Everything came back perfect. They are reliable and consistently deliver quality work.",
+      name: "Manoj D.",
+      time: "4 weeks ago",
+      text: "The pickup and drop-off were perfectly on time. Great customer service and quality. Estreewala is easily the most trusted laundry service near me.",
       rating: 5,
       avatar: "https://i.pravatar.cc/150?img=6",
     },
     {
-      name: "Chris W.",
-      time: "1 day ago",
-      text: "Needed a last-minute rush job and they delivered without any fuss. The clothes were immaculate. Super helpful service!",
+      name: "Priya L.",
+      time: "2 weeks ago",
+      text: "I had a silk saree with tough stains - Estreewala’s premium dry cleaning restored it beautifully. Can’t thank their team enough!",
       rating: 5,
-      avatar: "https://i.pravatar.cc/150?img=20",
+      avatar: "https://i.pravatar.cc/150?img=7",
     },
     {
-      name: "Laura K.",
-      time: "3 weeks ago",
-      text: "The website is easy to use, and the service is even better. I love how simple it is to schedule a pick-up. Highly satisfied customer.",
+      name: "Aarav J.",
+      time: "1 month ago",
+      text: "I run a cafe and use their commercial laundry service for linens and aprons. The quality and consistency are unbeatable, and delivery is always prompt.",
       rating: 5,
-      avatar: "https://i.pravatar.cc/150?img=18",
+      avatar: "https://i.pravatar.cc/150?img=8",
+    },
+    {
+      name: "Kavita M.",
+      time: "5 days ago",
+      text: "Their eco-friendly laundry process really stands out. My clothes feel cleaner and softer, and I love that they care about sustainability too.",
+      rating: 5,
+      avatar: "https://i.pravatar.cc/150?img=9",
+    },
+    {
+      name: "Sameer V.",
+      time: "3 weeks ago",
+      text: "Affordable, reliable, and fast - exactly what a busy person needs. Estreewala’s wash and fold service has been a lifesaver for my weekly routine.",
+      rating: 5,
+      avatar: "https://i.pravatar.cc/150?img=10",
     },
   ];
 
@@ -98,20 +98,27 @@ const LaundryWalaTestimonials = () => {
   };
 
   return (
-    <section className="py-20 px-4  sm:px-6 lg:px-8">
+    <section className=" md:pb-30 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
         <p className="inline-block px-4 py-2 mb-3 bg-[#F5F0E8] text-[#6E5A4C] font-semibold tracking-wider uppercase mt-8 rounded-full shadow-md">
           TESTIMONIALS
         </p>
-        <h2 className="text-4xl lg:text-5xl font-extrabold mb-12 leading-tight text-[#2E2A53]">
+
+        <h2 className="text-4xl lg:text-5xl font-extrabold leading-tight text-[#2E2A53]">
           Satisfied customers sing our praises
         </h2>
+
+        <p className="text-lg mb-12 text-gray-600 my-4">
+          See why homes, hostels, and offices trust Estreewala for quick,
+          reliable, and eco-friendly laundry and dry cleaning services - every
+          single day.
+        </p>
 
         <div className="mx-4 sm:mx-0">
           <Slider key={windowWidth} {...sliderSettings}>
             {reviews.map((review, index) => (
               <div key={index} className="focus:outline-none">
-                <div className="m-4 rounded-xl p-6 shadow-xl text-left flex flex-col h-full bg-white border border-[#C9B9A5]">
+                <div className="m-4 rounded-xl p-6 shadow-xl text-left flex flex-col h-full bg-white border border-[#C9B9A5] transition-transform duration-300 hover:scale-[1.02]">
                   <div className="flex items-center mb-4">
                     <img
                       src={review.avatar}
@@ -119,15 +126,13 @@ const LaundryWalaTestimonials = () => {
                       className="w-12 h-12 rounded-full mr-3 object-cover"
                       loading="lazy"
                     />
-                    <div>
-                      <p className="font-bold text-base text-[#1A1A1A]">
-                        {review.name}
-                      </p>
-                    </div>
+                    <p className="font-semibold text-lg text-[#1A1A1A]">
+                      {review.name}
+                    </p>
                   </div>
 
-                  <p className="text-base flex-grow mb-6 italic text-[#1A1A1A]">
-                    &ldquo;{review.text}&rdquo;
+                  <p className="text-base text-[#1A1A1A] italic leading-relaxed">
+                    “{review.text}”
                   </p>
                 </div>
               </div>

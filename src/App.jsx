@@ -33,20 +33,17 @@ function Home() {
       <section id="eco">
         <Eco />
       </section>
-      <section id="testimonials">
-        <Test />
-      </section>
       <section id="faq">
         <FAQ />
+      </section>
+      <section id="testimonials">
+        <Test />
       </section>
       <section id="cta">
         <Cta />
       </section>
       <section id="contact">
         <HomeContact />
-      </section>
-      <section id="quickservice">
-        <QuickService setShowForm={setShowForm} />
       </section>
 
       <Footer />
@@ -69,7 +66,7 @@ export default function App() {
           element={
             <>
               {" "}
-              <Contact /> <HomeContact /> <Contactme /> <Footer />{" "}
+              <Contact /> <HomeContact /> <Footer />{" "}
             </>
           }
         ></Route>

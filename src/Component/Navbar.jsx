@@ -1,37 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import Estreewala from "../assets/Estreewala.webp";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+import { motion } from "framer-motion"; // <-- added
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
-  const navLinks = [
+  const leftLinks = [
     { name: "Home", id: "home" },
     { name: "Services", id: "services" },
     { name: "About", id: "about" },
     { name: "Eco-Friendly", id: "eco" },
-    { name: "Testimonials", id: "testimonials" },
-    { name: "FAQ", id: "faq" },
   ];
 
-  return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-10">
-        <RouterLink to="/">
-          <img
-            src={Estreewala}
-            alt="Logo"
-            className="w-14 h-14 md:w-16 md:h-16"
-          />
-        </RouterLink>
+  const rightLinks = [
+    { name: "Testimonials", id: "testimonials" },
+    { name: "FAQ", id: "faq" },
+    { name: "Pricing", id: "pricing" },
+    { name: "Contact Us", id: "contact" },
+  ];
 
-        <div className="hidden md:flex justify-center items-center gap-6 font-medium w-full max-w-lg mx-auto">
-          {navLinks.map((link) =>
-            location.pathname === "/contact" ? (
-              link.name === "Home" ? (
+  const controlNavbar = () => {
+    if (window.scrollY > lastScrollY) setShow(false);
+    else setShow(true);
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
+
+  return (
+    <motion.header
+      initial={{ y: -100, opacity: 0 }} // Start above viewport
+      animate={{ y: show ? 0 : -100, opacity: 1 }} // Animate down
+      transition={{ type: "spring", stiffness: 120, damping: 20 }}
+      className="sticky top-0 z-50 bg-transparent transition-transform duration-300"
+    >
+      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-10 text-[#2E2A53]">
+        {/* Desktop Navbar */}
+        <div className="hidden md:flex items-center justify-center w-full font-medium">
+          {/* Left Links */}
+          <div className="flex items-center justify-evenly gap-6 flex-1">
+            {leftLinks.map((link) =>
+              location.pathname === "/contact" && link.name !== "Home" ? (
+                <span
+                  key={link.id}
+                  className="text-gray-400 cursor-not-allowed"
+                >
+                  {link.name}
+                </span>
+              ) : link.name === "Home" && location.pathname === "/contact" ? (
                 <RouterLink
                   key={link.id}
                   to="/"
@@ -40,69 +65,83 @@ const Navbar = () => {
                   {link.name}
                 </RouterLink>
               ) : (
-                <span
+                <ScrollLink
                   key={link.id}
-                  className="text-gray-400 cursor-not-allowed"
+                  to={link.id}
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  spy={true}
+                  activeClass="text-[#6E5A4C] border-b-2 border-[#6E5A4C] pb-1"
+                  className="cursor-pointer transition-colors duration-300 hover:text-[#6E5A4C]"
                 >
                   {link.name}
-                </span>
+                </ScrollLink>
               )
-            ) : (
-              <ScrollLink
-                key={link.id}
-                to={link.id}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                spy={true}
-                activeClass="text-[#6E5A4C] border-b-2 border-[#6E5A4C] pb-1"
-                className="cursor-pointer transition-colors duration-300 hover:text-[#6E5A4C]"
-              >
-                {link.name}
-              </ScrollLink>
-            )
-          )}
-        </div>
+            )}
+          </div>
 
-        <div className="hidden md:block flex-shrink-0">
-          <RouterLink
-            to="/contact"
-            className="px-5 py-2 rounded-full font-medium text-white bg-[#2E2A53] hover:bg-[#1A1A1A] transition-colors duration-300"
-          >
-            Contact Us
+          {/* Center Logo */}
+          <RouterLink to="/" className="mx-6 flex-shrink-0">
+            <img
+              src={Estreewala}
+              alt="Logo"
+              className="w-14 h-14 md:w-16 md:h-16"
+            />
           </RouterLink>
+
+          {/* Right Links */}
+          <div className="flex items-center justify-evenly gap-6 flex-1">
+            {rightLinks.map((link) =>
+              link.name === "Contact Us" ? (
+                <RouterLink
+                  key={link.id}
+                  to="/contact"
+                  className="cursor-pointer transition-colors duration-300 hover:text-[#6E5A4C]"
+                >
+                  {link.name}
+                </RouterLink>
+              ) : (
+                <ScrollLink
+                  key={link.id}
+                  to={link.id}
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  spy={true}
+                  activeClass="text-[#6E5A4C] border-b-2 border-[#6E5A4C] pb-1"
+                  className="cursor-pointer transition-colors duration-300 hover:text-[#6E5A4C]"
+                >
+                  {link.name}
+                </ScrollLink>
+              )
+            )}
+          </div>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl p-2"
+          className="md:hidden text-2xl p-2 text-white"
         >
           {open ? <HiX /> : <HiMenu />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden absolute w-full bg-white shadow-lg">
-          <div className="px-6 py-4 flex flex-col space-y-4">
-            {navLinks.map((link) =>
-              location.pathname === "/contact" ? (
-                link.name === "Home" ? (
-                  <RouterLink
-                    key={link.id}
-                    to="/"
-                    onClick={() => setOpen(false)}
-                    className="py-2 border-b border-gray-100 text-lg hover:text-[#6E5A4C]"
-                  >
-                    {link.name}
-                  </RouterLink>
-                ) : (
-                  <span
-                    key={link.id}
-                    className="text-gray-400 cursor-not-allowed py-2 border-b border-gray-100"
-                  >
-                    {link.name}
-                  </span>
-                )
+        <div className="md:hidden absolute w-full z-50 bg-transparent">
+          <div className="px-6 py-4 flex flex-col space-y-4 text-[#2E2A53]">
+            {[...leftLinks, ...rightLinks].map((link) =>
+              link.name === "Contact Us" ? (
+                <RouterLink
+                  key={link.id}
+                  to="/contact"
+                  onClick={() => setOpen(false)}
+                  className="py-2 border-b border-white/20 text-lg hover:text-[#6E5A4C] transition-colors duration-300"
+                >
+                  {link.name}
+                </RouterLink>
               ) : (
                 <ScrollLink
                   key={link.id}
@@ -111,24 +150,16 @@ const Navbar = () => {
                   duration={500}
                   offset={-80}
                   onClick={() => setOpen(false)}
-                  className="cursor-pointer py-2 border-b border-gray-100 text-lg hover:text-[#6E5A4C] transition-colors duration-300"
+                  className="cursor-pointer py-2 border-b border-white/20 text-lg hover:text-[#6E5A4C] transition-colors duration-300"
                 >
                   {link.name}
                 </ScrollLink>
               )
             )}
-
-            <RouterLink
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="mt-4 py-3 rounded-md text-center font-medium text-white bg-[#2E2A53] hover:bg-[#1A1A1A] transition-colors duration-300"
-            >
-              Contact Us
-            </RouterLink>
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
 
