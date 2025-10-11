@@ -69,7 +69,7 @@ export default function App() {
           element={
             <>
               {" "}
-              <Contact /> <HomeContact /> <Contactme />{" "}
+              <Contact /> <HomeContact /> <Contactme /> <Footer />{" "}
             </>
           }
         ></Route>
