@@ -52,54 +52,6 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
-            <h2 className="text-xl font-semibold text-[#2E2A53] mb-6 border-b pb-2 tracking-wide">
-              Contact Information
-            </h2>
-
-            <div className="space-y-4">
-              <ContactInfoCard
-                icon={<FaPhoneAlt />}
-                title="Phone"
-                value="+91 98765 43210"
-              />
-
-              <ContactInfoCard
-                icon={<FaEnvelope />}
-                title="Email"
-                value="support@laundrywala.com"
-              />
-
-              <ContactInfoCard
-                icon={<FaMapMarkerAlt />}
-                title="Location"
-                value="Sector 45, Gurugram, Haryana"
-              />
-            </div>
-
-            <div className="mt-12">
-              <h2 className="text-xl font-semibold text-[#2E2A53] mb-6 border-b pb-2 tracking-wide">
-                Follow Us
-              </h2>
-              <div className="flex space-x-4">
-                {["Instagram", "Facebook", "Twitter", "WhatsApp"].map(
-                  (platform) => (
-                    <a
-                      key={platform}
-                      href={`#${platform.toLowerCase()}`}
-                      className="h-10 w-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[#2E2A53] hover:bg-[#2E2A53] hover:text-white transition duration-300"
-                      title={platform}
-                    >
-                      <span className="text-sm font-semibold">
-                        {platform[0]}
-                      </span>
-                    </a>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div>
             <h2 className="text-xl font-semibold text-[#2E2A53] mb-8 border-b pb-2 tracking-wide">
               Send Us a Message
             </h2>
@@ -158,6 +110,53 @@ const ContactSection = () => {
                 </button>
               </div>
             </form>
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold text-[#2E2A53] mb-6 border-b pb-2 tracking-wide">
+              Contact Information
+            </h2>
+
+            <div className="space-y-4">
+              <ContactInfoCard
+                icon={<FaPhoneAlt />}
+                title="Phone"
+                value="+91 98765 43210"
+              />
+
+              <ContactInfoCard
+                icon={<FaEnvelope />}
+                title="Email"
+                value="support@laundrywala.com"
+              />
+
+              <ContactInfoCard
+                icon={<FaMapMarkerAlt />}
+                title="Location"
+                value="Sector 45, Gurugram, Haryana"
+              />
+            </div>
+
+            <div className="mt-12">
+              <h2 className="text-xl font-semibold text-[#2E2A53] mb-6 border-b pb-2 tracking-wide">
+                Follow Us
+              </h2>
+              <div className="flex space-x-4">
+                {["Instagram", "Facebook", "Twitter", "WhatsApp"].map(
+                  (platform) => (
+                    <a
+                      key={platform}
+                      href={`#${platform.toLowerCase()}`}
+                      className="h-10 w-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[#2E2A53] hover:bg-[#2E2A53] hover:text-white transition duration-300"
+                      title={platform}
+                    >
+                      <span className="text-sm font-semibold">
+                        {platform[0]}
+                      </span>
+                    </a>
+                  )
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
