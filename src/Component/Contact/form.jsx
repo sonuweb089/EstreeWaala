@@ -26,6 +26,7 @@ const LaundryWalaContactForm = () => {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
+
         <div className="flex flex-col sm:flex-row justify-between items-center mb-12 text-center sm:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-[#2E2A53]">
             Send a Message
@@ -40,6 +41,7 @@ const LaundryWalaContactForm = () => {
             Get in Touch with Our Team
           </h3>
 
+   
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <input
               type="text"
@@ -61,6 +63,7 @@ const LaundryWalaContactForm = () => {
             />
           </div>
 
+       
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <input
               type="tel"
@@ -82,6 +85,7 @@ const LaundryWalaContactForm = () => {
             />
           </div>
 
+
           <textarea
             name="message"
             placeholder="Your detailed message or question..."
@@ -92,6 +96,7 @@ const LaundryWalaContactForm = () => {
             className="w-full p-3 rounded-lg border border-[#C9B9A5] focus:ring-2 focus:ring-[#2E2A53] focus:border-[#2E2A53] focus:outline-none mb-8 resize-y bg-transparent text-[#1A1A1A] placeholder-[#C9B9A5]"
           ></textarea>
 
+       
           <button
             type="submit"
             className="w-full py-3 px-6 rounded-lg font-bold text-lg bg-[#2E2A53] text-[#E9DDC9] shadow-xl hover:bg-[#1A1A1A] transition duration-300"

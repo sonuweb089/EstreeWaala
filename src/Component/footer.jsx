@@ -14,7 +14,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-12 pb-6 font-sans border border-gray-700">
+    <footer className="bg-black bg-fixed text-white pt-12 pb-6 font-sans border border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo Section */}
 

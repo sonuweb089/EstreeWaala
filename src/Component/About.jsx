@@ -12,7 +12,8 @@ const AboutUsSection = ({ setShowForm }) => {
             <img
               src={Ab}
               alt="Laundry worker working on a suit"
-              className="w-full h-full object-cover aspect-[2/3] rounded-2xl"
+              // ADD counter-scale-fix here
+              className="w-full h-full object-cover aspect-[2/3] rounded-2xl counter-scale-fix"
               loading="lazy"
             />
           </div>
@@ -21,7 +22,8 @@ const AboutUsSection = ({ setShowForm }) => {
             <img
               src={Ab1}
               alt="Woman sorting clothes by washing machine"
-              className="w-full h-full object-cover aspect-[2/3] rounded-2xl"
+              // ADD counter-scale-fix here
+              className="w-full h-full object-cover aspect-[2/3] rounded-2xl counter-scale-fix"
               loading="lazy"
             />
           </div>

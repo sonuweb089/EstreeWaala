@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div class="min-h-screen bg-white ">
+    <div className="font-sans antialiased ">
       <App />
     </div>
   </StrictMode>
